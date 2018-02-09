@@ -1,0 +1,27 @@
+@import "./Styles";
+.roster-list {
+    .roster-player {
+        padding: 10px 0;
+        box-shadow: 0 1px 3px $blue;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        .player-name {
+            font-size: 20px;
+            display: inline;
+        }
+        .player-delete {
+            float: right;
+            .badge-player-delete {
+                color: $blue;
+                font-size: 16px;
+                font-weight: 400;
+                transition: .1s ease-in;
+            }
+            .badge-player-delete:hover {
+                cursor: pointer;
+                color: $light-blue;
+                background-color: $error;
+            }
+        }
+    }
+}

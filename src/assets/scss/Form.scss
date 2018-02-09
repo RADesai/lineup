@@ -1,0 +1,67 @@
+@import "./Styles";
+.form-container {
+    form {
+        .form-field {
+            input {
+                border-radius: 2px;
+                outline: none;
+                transition: .2s ease-in;
+            }
+        }
+        input:focus {
+            background-color: $light-blue;
+            color: $blue
+        }
+        margin: 5px;
+        .btn-submit {
+            margin: 5px 10px;
+            background-color: $blue;
+            color: #fff;
+        }
+        .btn-submit:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.form-add-player {
+    box-shadow: 0 1px 3px $blue;
+    border-radius: 4px;
+    background-color: $blue;
+    form {
+        .form-field {
+            input {
+                margin-bottom: 20px;
+                font-size: 20px;
+                margin-top: 5px;
+                background-color: $light-blue;
+                border: 2px solid $light-blue;
+                border-radius: 4px;
+                color: $blue;
+                width: 60%;
+                opacity: 0.75;
+            }
+            input:focus {
+                opacity: 1;
+            }
+        }
+        button {
+            background-color: transparent;
+            .fa-plus-circle {
+                color: $light-blue;
+                font-size: 24px;
+                transition: .3s ease-out;
+            }
+            .fa-plus-circle:hover {
+                cursor: pointer;
+                color: $success;
+            }
+        }
+        button:disabled {
+            .fa-plus-circle {
+                cursor: not-allowed;
+                color: $error;
+            }
+        }
+    }
+}

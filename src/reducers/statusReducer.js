@@ -1,4 +1,6 @@
-const initialState = {}
+const initialState = {
+    status: ''
+}
 
 export default function sampleReducer(state = initialState, action) {
     switch (action.type) {

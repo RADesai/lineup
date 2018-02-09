@@ -1,4 +1,14 @@
 @import "./Styles";
 body {
     height: 100%;
+    font-family: $primary-font;
+    .jumbotron {
+        background-color: transparent;
+        box-shadow: 0 0 2px $light-blue;
+    }
+    .app-title {
+        font-weight: 700;
+        font-size: 44px;
+        padding-left: 1%;
+    }
 }
