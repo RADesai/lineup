@@ -1,6 +1,7 @@
 @import "./Styles";
 .roster-list {
     .roster-player {
+        transition: .1s ease;
         padding: 10px 0;
         box-shadow: 0 1px 3px $blue;
         border-radius: 4px;
@@ -15,13 +16,18 @@
                 color: $blue;
                 font-size: 16px;
                 font-weight: 400;
-                transition: .1s ease-in;
             }
             .badge-player-delete:hover {
+                color: $grey;
                 cursor: pointer;
-                color: $light-blue;
                 background-color: $error;
             }
+        }
+    }
+    .roster-player:hover {
+        background-color: $grey;
+        .player-name {
+            color: $blue;
         }
     }
 }

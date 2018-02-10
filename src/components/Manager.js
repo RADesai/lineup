@@ -17,22 +17,19 @@ const Manager = props => {
         <div className="container manager">
             <div className="row text-center">
                 <div className="col-sm-12 manager-title">
-                    Manager
+                    Create Roster
                 </div>
             </div>
             <div className="row text-center roster">
-                <div className="col-sm-12 roster-title">
-                    Roster
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-sm-12 col-md-4 text-center">
+                <div className="col-sm-12 col-md-10 col-lg-8 mx-auto">
                     <CreateRosterForm 
                         createRoster={ createRoster }
                         roster={ roster }
                     />
                 </div>
-                <div className="col-sm-12 col-md-8">
+            </div>
+            <div className="row">
+                <div className="col-sm-12 col-md-10 col-lg-8 mx-auto">
                     <Roster
                         roster={ roster }
                         addPlayer= { addPlayer }

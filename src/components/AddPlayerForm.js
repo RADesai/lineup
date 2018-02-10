@@ -7,6 +7,7 @@ const AddPlayerForm = props => {
     const {
         addPlayer,
         handleSubmit,
+        pristine,
         dirty,
         invalid,
         submitting
@@ -18,16 +19,19 @@ const AddPlayerForm = props => {
     </div>    
 
     return (
-        <div className="row">
-            <div className="col-sm-12 form-container form-add-player text-center">
+        <div className="row form-container form-add-player text-left">
+            <div className="col-sm-12 col-md-6 col-lg-4 add-player">
+                <span className="add-player-title">ADD PLAYER</span>
+            </div>
+            <div className="col-sm-12 col-md-6 col-lg-8">
                 <form onSubmit={ handleSubmit(form => addPlayer(form)) }>
+                    { getNameField() }
                     <button
                         type="submit"
-                        disabled={ (dirty && invalid) || submitting }
+                        disabled={ (dirty && invalid) || submitting || pristine }
                         className="btn">
                         <i className="fas fa-plus-circle"></i>
                     </button>
-                    { getNameField() }
                 </form>
             </div>
         </div>

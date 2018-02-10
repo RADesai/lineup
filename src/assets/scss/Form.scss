@@ -3,23 +3,66 @@
     form {
         .form-field {
             input {
-                border-radius: 2px;
+                border-radius: 4px;
                 outline: none;
-                transition: .2s ease-in;
+                transition: .3s ease;
+                margin-bottom: 5px;
             }
-        }
-        input:focus {
-            background-color: $light-blue;
-            color: $blue
+            input::placeholder {
+                color: $light-blue;
+            }
+            input:focus {
+                color: $blue;
+                background-color: $light-blue;
+            }
         }
         margin: 5px;
         .btn-submit {
             margin: 5px 10px;
             background-color: $blue;
-            color: #fff;
+            color: $light-purple;
         }
         .btn-submit:hover {
             cursor: pointer;
+        }
+    }
+}
+
+.form-create-roster {
+    border-radius: 4px;
+    background-color: transparent;
+    .create-roster {
+        padding: 0;
+    }
+    form {
+        margin: 0;
+        .form-field {
+            input {
+                font-size: 28px;
+                background-color: $light-purple;
+                border: none;
+                color: $light-blue;
+                width: 75%;
+                text-align: center;
+            }
+        }
+        button {
+            background-color: transparent;
+            .fa-save {
+                color: $light-blue;
+                font-size: 30px;
+                transition: .3s ease-out;
+            }
+            .fa-save:hover {
+                cursor: pointer;
+                color: $success;
+            }
+        }
+        button:disabled {
+            .fa-save {
+                cursor: not-allowed;
+                color: $error;
+            }
         }
     }
 }
@@ -28,28 +71,33 @@
     box-shadow: 0 1px 3px $blue;
     border-radius: 4px;
     background-color: $blue;
+    margin-bottom: 10px;
+    .add-player-title {
+        font-size: 30px;
+        color: $light-purple;
+        vertical-align: middle;
+    }
     form {
+        margin: 0;
         .form-field {
+            display: inline-block;
+            width: 75%;
             input {
-                margin-bottom: 20px;
                 font-size: 20px;
                 margin-top: 5px;
-                background-color: $light-blue;
-                border: 2px solid $light-blue;
-                border-radius: 4px;
-                color: $blue;
-                width: 60%;
-                opacity: 0.75;
-            }
-            input:focus {
-                opacity: 1;
+                background-color: $light-purple;
+                border: 2px solid $light-purple;
+                color: $light-blue;
+                width: 100%;
             }
         }
         button {
+            display: inline-block;
             background-color: transparent;
+            vertical-align: bottom;
             .fa-plus-circle {
                 color: $light-blue;
-                font-size: 24px;
+                font-size: 30px;
                 transition: .3s ease-out;
             }
             .fa-plus-circle:hover {

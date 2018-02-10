@@ -18,16 +18,18 @@ const CreateRosterForm = props => {
     } = props;
 
     return (
-        <div className="form-container">
-            <form onSubmit={ handleSubmit(form => createRoster(form, roster)) }>
-                { getNameField() }
-                <button
-                    type="submit"
-                    disabled={ pristine || submitting }
-                    className="btn btn-submit">
-                    SAVE
-                </button>
-            </form>
+        <div className="row form-container form-create-roster">
+            <div className="col-sm-12 create-roster">
+                <form onSubmit={ handleSubmit(form => createRoster(form, roster)) }>
+                    { getNameField() }
+                    <button
+                        type="submit"
+                        disabled={ pristine || submitting }
+                        className="btn">
+                        <i className="fas fa-save"></i>
+                    </button>
+                </form>
+            </div>
         </div>
     );
 }
