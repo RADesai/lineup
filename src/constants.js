@@ -1,3 +1,5 @@
+export const SELECT_PAGE = 'SELECT_PAGE';
+
 export const FETCH_PLAYERS = 'FETCH_PLAYERS';
 export const ADD_PLAYER = 'ADD_PLAYER';
 export const UPDATE_PLAYER = 'UPDATE_PLAYER';

@@ -1,0 +1,41 @@
+@import "./Styles";
+nav {
+    background-color: $light-blue;
+    color: $blue;
+    margin-bottom: 35px;
+    font-family: $secondary-font;
+    .app-title {
+        margin: 0 0 10px 15px;
+        font-weight: 700;
+        font-size: 50px;
+    }
+    .navbar-toggler-right:hover {
+        cursor: pointer;
+    }
+    .navbar-toggler-right:focus {
+        outline: none;
+    }
+    .nav-item {
+        .nav-link {
+            font-size: 20px;
+        }
+        .nav-divider {
+            transition: .3s ease;
+            border: 1px solid $light-purple;
+            box-shadow: 0 1px 3px $light-purple;
+            width: 0%;
+            left: 0;
+        }
+    }
+    .nav-item:hover {
+        .nav-link,
+        .nav-link:hover {
+            color: $blue;
+        }
+        .nav-divider {
+            border: 1px solid $light-purple;
+            box-shadow: 0 1px 3px $blue;
+            width: 60%;
+        }
+    }
+}

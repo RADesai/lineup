@@ -10,7 +10,7 @@ render(
     <Provider store={store}>
     <AppContainer>
         <BrowserRouter>
-            <Route exact path="/" component={App}/>
+            <Route path="/" component={ App }/>
         </BrowserRouter>
     </AppContainer>
 </Provider>, document.getElementById('app'));

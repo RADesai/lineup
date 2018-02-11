@@ -9,7 +9,7 @@
                 margin-bottom: 5px;
             }
             input::placeholder {
-                color: $light-blue;
+                color: $blue;
             }
             input:focus {
                 color: $blue;
@@ -39,11 +39,14 @@
         .form-field {
             input {
                 font-size: 28px;
-                background-color: $light-purple;
-                border: none;
-                color: $light-blue;
+                background-color: $light-blue;
+                color: $light-purple;
                 width: 75%;
                 text-align: center;
+                border: 1px solid $light-blue;
+            }
+            input:focus {
+                border-color: $blue;
             }
         }
         button {

@@ -5,7 +5,7 @@ import '../assets/scss/Form.scss'
 
 const getNameField = () =>
     <div className="form-field">
-        <Field name="name" component="input" type="text" placeholder="Roster Name"/>
+        <Field name="name" component="input" type="text" placeholder="Name this Roster"/>
     </div>    
 
 const CreateRosterForm = props => {
@@ -18,8 +18,8 @@ const CreateRosterForm = props => {
     } = props;
 
     return (
-        <div className="row form-container form-create-roster">
-            <div className="col-sm-12 create-roster">
+        <div className="form-container form-create-roster">
+            <div className="create-roster">
                 <form onSubmit={ handleSubmit(form => createRoster(form, roster)) }>
                     { getNameField() }
                     <button

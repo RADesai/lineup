@@ -1,7 +1,32 @@
-import { FETCH_PLAYERS, FULFILLED, ADD_PLAYER, REMOVE_PLAYER } from '../constants'
+import { FETCH_PLAYERS, FULFILLED, ADD_PLAYER, REMOVE_PLAYER, SELECT_PAGE } from '../constants'
 const initialState = {
-    roster: [],
-    players: []
+    roster: [
+        {
+            name: 'Point Guard'
+        },
+        {
+            name: 'Shooting Guard'
+        },
+        {
+            name: 'Small Forward'
+        },
+        {
+            name: 'Power Forward'
+        },
+        {
+            name: 'Center'
+        },
+        {
+            name: 'BENCH'
+        },
+        {
+            name: 'BENCH'
+        },
+        {
+            name: 'BENCH'
+        },
+    ],
+    selectedPage: 'MANAGER'
 }
 
 const addPlayer = (newPlayer, state) => {
@@ -13,6 +38,11 @@ const removePlayer = (removedPlayer, state) => {
 
 export default function sampleReducer(state = initialState, action) {
     switch (action.type) {
+        case SELECT_PAGE:
+            return {
+                ...state,
+                selectedPage: action.payload
+            }
         case ADD_PLAYER:
             return {
                 ...state,

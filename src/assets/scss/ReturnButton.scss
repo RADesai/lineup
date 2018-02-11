@@ -1,0 +1,13 @@
+@import "./Styles";
+.btn-back {
+    background-color: $grey;
+    color: $light-purple;
+    letter-spacing: 2px;
+    transition: 0.3s ease-in-out 0s;
+}
+
+.btn-back:hover {
+    cursor: pointer;
+    background-color: $blue;
+    color: $light-blue;
+}

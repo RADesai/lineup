@@ -1,7 +1,11 @@
-import { FETCH_PLAYERS, ADD_PLAYER, REMOVE_PLAYER, CREATE_ROSTER } from '../constants'
+import { SELECT_PAGE, FETCH_PLAYERS, ADD_PLAYER, REMOVE_PLAYER, CREATE_ROSTER} from '../constants'
 import * as service from '../services'
 
 const actions = {
+    selectPage: selectedPage => ({
+        type: SELECT_PAGE,
+        payload: selectedPage
+    }),
     fetchPlayers: () => ({
         type: FETCH_PLAYERS,
         payload: service.fetchPlayers()
