@@ -18,7 +18,10 @@ class ManageRosters extends Component {
             <div className="container manage-rosters">
                 <RosterModal
                     roster={ this.props.editingRoster }
-                    open
+                    deleteRoster={ this.props.deleteRoster }
+                    modalOpen={ this.props.modalOpen }
+                    rosterDeleted={ this.props.rosterDeleted }
+                    closeModal={ this.props.closeModal }
                 />
                 <ReturnButton selectPage={ this.props.selectPage } />
                 <div className="row">
@@ -60,6 +63,7 @@ ManageRosters.propTypes = {
     editingRoster: PropTypes.object,
     rosters: PropTypes.array,
     modalOpen: PropTypes.bool,
+    rosterDeleted: PropTypes.bool,
     displayModal: PropTypes.func,
     selectPage: PropTypes.func
 }

@@ -5,6 +5,10 @@
             background-color: $light-blue;
             color: $blue;
             font-size: 24px;
+            .roster-deleted {
+                font-size: 20px;
+                font-weight: 700;
+            }
         }
         .modal-body {
             .player {
@@ -16,10 +20,15 @@
         }
         .modal-footer {
             background-color: $blue;
-            button {
+            .btn {
                 background-color: $light-purple;
             }
-            button:hover {
+            .fa-trash-alt {
+                color: $error;
+                margin-left: 20px;
+            }
+            .fa-trash-alt,
+            .btn:hover {
                 cursor: pointer;
             }
         }

@@ -24,9 +24,9 @@ App.PropTypes = {
 
 function mapStateToProps(state) {
     const { roster, rosters, selectedPage } = state.rosterReducer;
-    const { modalOpen, editingRoster } = state.modalReducer;
+    const { modalOpen, rosterDeleted, editingRoster } = state.modalReducer;
     const { status } = state.statusReducer;
-    return { roster, rosters, selectedPage, modalOpen, editingRoster, status };
+    return { roster, rosters, selectedPage, modalOpen, rosterDeleted, editingRoster, status };
 }
 
 function mapDispatchToProps(dispatch) {

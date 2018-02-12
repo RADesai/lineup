@@ -29,6 +29,13 @@ const actions = {
     displayModal: roster => ({
         type: CONSTANTS.DISPLAY_ROSTER_MODAL,
         payload: roster
+    }),
+    closeModal: () => ({
+        type: CONSTANTS.CLOSE_ROSTER_MODAL
+    }),
+    deleteRoster: rosterId => ({
+        type: CONSTANTS.DELETE_ROSTER,
+        payload: service.deleteRoster(rosterId)
     })
 };
 

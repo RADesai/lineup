@@ -56,14 +56,17 @@ const getCreateRoster = (selectPage, roster, addPlayer, removePlayer, createRost
         createRoster={ createRoster }
     />
 
-const getManageRosters = (fetchRosters, selectPage, rosters, modalOpen, displayModal, editingRoster) => {
+const getManageRosters = (fetchRosters, selectPage, rosters, modalOpen, rosterDeleted, displayModal, editingRoster, deleteRoster, closeModal) => {
     return (
         <ManageRosters
             selectPage={ selectPage }
             rosters={ rosters }
+            deleteRoster={ deleteRoster }
             fetchRosters={ fetchRosters }
             modalOpen={ modalOpen }
+            rosterDeleted={ rosterDeleted }
             displayModal={ displayModal }
+            closeModal={ closeModal }
             editingRoster={ editingRoster }
         />
     );
@@ -75,21 +78,36 @@ const Manager = props => {
         rosters,
         selectedPage,
         modalOpen,
+        rosterDeleted,
         editingRoster
     } = props;
     const {
         selectPage,
+        deleteRoster,
         fetchRosters,
         addPlayer,
         removePlayer,
         createRoster,
-        displayModal
+        displayModal,
+        closeModal
     } = props.actions;
 
     const pages = {
         MANAGER: getPageOptions(selectPage),
-        CREATE_ROSTER: getCreateRoster(selectPage, roster, addPlayer, removePlayer, createRoster),
-        MANAGE_ROSTERS: getManageRosters(fetchRosters, selectPage, rosters, modalOpen, displayModal, editingRoster)
+        CREATE_ROSTER: getCreateRoster(
+            selectPage, roster, addPlayer, removePlayer, createRoster
+        ),
+        MANAGE_ROSTERS: getManageRosters(
+            fetchRosters,
+            selectPage,
+            rosters,
+            modalOpen,
+            rosterDeleted,
+            displayModal,
+            editingRoster,
+            deleteRoster,
+            closeModal
+        )
     }
 
     return (
@@ -103,6 +121,7 @@ Manager.propTypes = {
     roster: PropTypes.array,
     rosters: PropTypes.array,
     modalOpen: PropTypes.bool,
+    rosterDeleted: PropTypes.bool,
     displayModal: PropTypes.func,
     selectPage: PropTypes.func,
     addPlayer: PropTypes.func,

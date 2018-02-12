@@ -13,4 +13,7 @@ export const createRoster = roster => axios.post('/api/rosters', roster)
 export const fetchRosters = () => axios.get('/api/rosters')
 
 // DELETE given model from db
+export const deleteRoster = rosterId => axios.delete(`/api/rosters/${rosterId}`)
+
+// DELETE given model from db
 export const removePlayer = playerId => axios.delete(`/api/players/${playerId}`)

@@ -29,6 +29,10 @@ export default function rosterReducer(state = initialState, action) {
                 ...state,
                 roster: removePlayer(action.payload, state)
             }
+        case CONSTANTS.CLOSE_ROSTER_MODAL:
+            return {
+                ...initialState
+            }
         case `${CONSTANTS.FETCH_PLAYERS}_${CONSTANTS.FULFILLED}`:
             return {
                 ...state,
@@ -39,6 +43,8 @@ export default function rosterReducer(state = initialState, action) {
                 ...state,
                 rosters: action.payload.data
             }
+        // find roster that was deleted and mark it
+        case `${CONSTANTS.DELETE_ROSTER}_${CONSTANTS.FULFILLED}`:
         default:
             return state;
     }

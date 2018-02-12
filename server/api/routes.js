@@ -28,6 +28,9 @@ module.exports = function (app, express) {
     router.route('/players/:id')
         .delete(controller.removePlayer);
 
+    router.route('/rosters/:id')
+        .delete(controller.deleteRoster);
+
     app.use('/api', router);
 
     app.get('/*', (req, res) => {
