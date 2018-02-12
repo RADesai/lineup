@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import CreateRoster from './CreateRoster';
 import ManageRosters from './ManageRosters';
+import CONSTANTS from '../constants'
 import '../assets/scss/Manager.scss'
 
 const getPageOptions = selectPage =>
@@ -9,7 +10,7 @@ const getPageOptions = selectPage =>
         <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3">
             <div
                 className="select-page mx-auto"
-                onClick={ () => selectPage('CREATE_ROSTER') }
+                onClick={ () => selectPage(CONSTANTS.CREATE_ROSTER) }
             >
                 <div className="select-page-icon">
                     <i className="far fa-address-book"></i>
@@ -20,7 +21,7 @@ const getPageOptions = selectPage =>
         <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3">
             <div
                 className="select-page mx-auto"
-                onClick={ () => selectPage('MANAGE_ROSTERS') }
+                onClick={ () => selectPage(CONSTANTS.MANAGE_ROSTERS) }
             >
                 <div className="select-page-icon">
                     <i className="fas fa-basketball-ball"></i>
@@ -55,32 +56,40 @@ const getCreateRoster = (selectPage, roster, addPlayer, removePlayer, createRost
         createRoster={ createRoster }
     />
 
-const getManageRosters = (fetchRosters, selectPage, rosters) => {
+const getManageRosters = (fetchRosters, selectPage, rosters, modalOpen, displayModal, editingRoster) => {
     return (
         <ManageRosters
             selectPage={ selectPage }
             rosters={ rosters }
             fetchRosters={ fetchRosters }
+            modalOpen={ modalOpen }
+            displayModal={ displayModal }
+            editingRoster={ editingRoster }
         />
     );
 }
 
 const Manager = props => {
     const {
-        selectPage,
         roster,
         rosters,
+        selectedPage,
+        modalOpen,
+        editingRoster,
+    } = props;
+    const {
+        selectPage,
         fetchRosters,
         addPlayer,
         removePlayer,
         createRoster,
-        selectedPage,
-    } = props;
+        displayModal,
+    } = props.actions;
 
     const pages = {
         MANAGER: getPageOptions(selectPage),
         CREATE_ROSTER: getCreateRoster(selectPage, roster, addPlayer, removePlayer, createRoster),
-        MANAGE_ROSTERS: getManageRosters(fetchRosters, selectPage, rosters)
+        MANAGE_ROSTERS: getManageRosters(fetchRosters, selectPage, rosters, modalOpen, displayModal, editingRoster)
     }
 
     return (
@@ -92,7 +101,10 @@ const Manager = props => {
 
 Manager.propTypes = {
     roster: PropTypes.array,
+    editingRoster: PropTypes.object,
     rosters: PropTypes.array,
+    modalOpen: PropTypes.bool,
+    displayModal: PropTypes.func,
     selectPage: PropTypes.func,
     addPlayer: PropTypes.func,
     fetchRosters: PropTypes.func,

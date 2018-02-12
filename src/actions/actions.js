@@ -25,6 +25,10 @@ const actions = {
     fetchRosters: () => ({
         type: CONSTANTS.FETCH_ROSTERS,
         payload: service.fetchRosters()
+    }),
+    displayModal: roster => ({
+        type: CONSTANTS.DISPLAY_ROSTER_MODAL,
+        payload: roster
     })
 };
 

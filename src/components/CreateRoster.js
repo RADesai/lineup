@@ -33,9 +33,7 @@ const CreateRoster = props => {
                 <div className="col-sm-12 col-md-10 col-lg-8 mx-auto">
                     <Roster
                         roster={ roster }
-                        addPlayer= { addPlayer }
                         removePlayer= { removePlayer }
-                        createRoster= { createRoster }
                     />
                     <AddPlayerForm 
                         addPlayer={ addPlayer }

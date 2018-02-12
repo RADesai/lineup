@@ -1,0 +1,27 @@
+@import "./Styles";
+.modal {
+    .modal-content {
+        .modal-header {
+            background-color: $light-blue;
+            color: $blue;
+            font-size: 24px;
+        }
+        .modal-body {
+            .player {
+                margin: 10px 0;
+                .player-name {
+                    font-size: 20px;
+                }
+            }
+        }
+        .modal-footer {
+            background-color: $blue;
+            button {
+                background-color: $light-purple;
+            }
+            button:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

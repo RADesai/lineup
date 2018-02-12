@@ -37,7 +37,7 @@ const removePlayer = (removedPlayer, state) => {
     return state.roster.filter(player => player.name  !== removedPlayer.name)
 }
 
-export default function sampleReducer(state = initialState, action) {
+export default function rosterReducer(state = initialState, action) {
     switch (action.type) {
         case CONSTANTS.SELECT_PAGE:
             return {

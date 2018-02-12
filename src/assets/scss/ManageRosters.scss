@@ -30,12 +30,10 @@
         }
     }
     .roster-icon:hover {
-        box-shadow: 0 1px 3px $light-purple;
-        background-color: $light-purple;
+        box-shadow: 0 1px 3px $blue;
         cursor: pointer;
         .edit-roster-icon {
             .fa-basketball-ball {
-                color: $light-blue;
                 animation: rotate 2s infinite linear;
             }
         }

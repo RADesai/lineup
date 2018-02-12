@@ -13,15 +13,19 @@ class App extends Component {
             <div>
                 <Navbar />
                 <Manager
-                    selectPage={ this.props.actions.selectPage }
-                    addPlayer={ this.props.actions.addPlayer }
-                    fetchPlayers={ this.props.actions.fetchPlayers }
-                    removePlayer={ this.props.actions.removePlayer }
-                    fetchRosters={ this.props.actions.fetchRosters }
-                    createRoster={ this.props.actions.createRoster }
-                    roster={ this.props.roster }
-                    rosters={ this.props.rosters }
-                    selectedPage={ this.props.selectedPage }
+                    { ...this.props }
+                    // selectPage={ this.props.actions.selectPage }
+                    // addPlayer={ this.props.actions.addPlayer }
+                    // fetchPlayers={ this.props.actions.fetchPlayers }
+                    // removePlayer={ this.props.actions.removePlayer }
+                    // fetchRosters={ this.props.actions.fetchRosters }
+                    // createRoster={ this.props.actions.createRoster }
+                    // displayModal={ this.props.actions.displayModal }
+                    // modalOpen={ this.props.modalOpen }
+                    // roster={ this.props.roster }
+                    // editingRoster={ this.props.editingRoster }
+                    // rosters={ this.props.rosters }
+                    // selectedPage={ this.props.selectedPage }
                 />
             </div>
         )
@@ -34,8 +38,9 @@ App.PropTypes = {
 
 function mapStateToProps(state) {
     const { roster, rosters, selectedPage } = state.rosterReducer;
+    const { modalOpen, editingRoster } = state.modalReducer;
     const { status } = state.statusReducer;
-    return { roster, rosters, selectedPage, status };
+    return { roster, rosters, selectedPage, modalOpen, editingRoster, status };
 }
 
 function mapDispatchToProps(dispatch) {
