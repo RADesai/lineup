@@ -17,8 +17,10 @@ class App extends Component {
                     addPlayer={ this.props.actions.addPlayer }
                     fetchPlayers={ this.props.actions.fetchPlayers }
                     removePlayer={ this.props.actions.removePlayer }
+                    fetchRosters={ this.props.actions.fetchRosters }
                     createRoster={ this.props.actions.createRoster }
                     roster={ this.props.roster }
+                    rosters={ this.props.rosters }
                     selectedPage={ this.props.selectedPage }
                 />
             </div>
@@ -31,9 +33,9 @@ App.PropTypes = {
 };
 
 function mapStateToProps(state) {
-    const { roster, selectedPage } = state.rosterReducer;
+    const { roster, rosters, selectedPage } = state.rosterReducer;
     const { status } = state.statusReducer;
-    return { roster, selectedPage, status };
+    return { roster, rosters, selectedPage, status };
 }
 
 function mapDispatchToProps(dispatch) {

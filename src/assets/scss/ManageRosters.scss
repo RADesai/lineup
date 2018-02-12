@@ -1,0 +1,52 @@
+@import "./Styles";
+.manage-rosters {
+    .page-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .roster-icon {
+        font-size: 26px;
+        color: $blue;
+        margin: 10px 25px;
+        padding: 30px 0;
+        border-radius: 4px;
+        transition: .2s ease;
+        font-family: $secondary-font;
+        .edit-roster-icon {
+            .fa-basketball-ball {
+                transition: .2s ease;
+                font-size: 26px;
+                color: $blue;
+                transition-property: transform;
+                transition-duration: 1s;
+                margin-bottom: 5px;
+            }
+        }
+        small {
+            font-family: $primary-font;
+            font-size: 13px;
+            color: $light-purple
+        }
+    }
+    .roster-icon:hover {
+        box-shadow: 0 1px 3px $light-purple;
+        background-color: $light-purple;
+        cursor: pointer;
+        .edit-roster-icon {
+            .fa-basketball-ball {
+                color: $light-blue;
+                animation: rotate 2s infinite linear;
+            }
+        }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

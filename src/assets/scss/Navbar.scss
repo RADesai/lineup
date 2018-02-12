@@ -19,23 +19,11 @@ nav {
         .nav-link {
             font-size: 20px;
         }
-        .nav-divider {
-            transition: .3s ease;
-            border: 1px solid $light-purple;
-            box-shadow: 0 1px 3px $light-purple;
-            width: 0%;
-            left: 0;
-        }
     }
     .nav-item:hover {
         .nav-link,
         .nav-link:hover {
             color: $blue;
-        }
-        .nav-divider {
-            border: 1px solid $light-purple;
-            box-shadow: 0 1px 3px $blue;
-            width: 60%;
         }
     }
 }
