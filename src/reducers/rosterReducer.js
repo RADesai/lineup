@@ -1,32 +1,7 @@
 import CONSTANTS from '../constants'
 const initialState = {
-    roster: [
-        {
-            name: 'Point Guard'
-        },
-        {
-            name: 'Shooting Guard'
-        },
-        {
-            name: 'Small Forward'
-        },
-        {
-            name: 'Power Forward'
-        },
-        {
-            name: 'Center'
-        },
-        {
-            name: 'BENCH'
-        },
-        {
-            name: 'BENCH'
-        },
-        {
-            name: 'BENCH'
-        },
-    ],
-    selectedPage: 'MANAGER',
+    roster: CONSTANTS.DEFAULT_ROSTER,
+    selectedPage: CONSTANTS.MANAGER_PAGE,
     rosters: []
 }
 

@@ -75,7 +75,7 @@ const Manager = props => {
         rosters,
         selectedPage,
         modalOpen,
-        editingRoster,
+        editingRoster
     } = props;
     const {
         selectPage,
@@ -83,7 +83,7 @@ const Manager = props => {
         addPlayer,
         removePlayer,
         createRoster,
-        displayModal,
+        displayModal
     } = props.actions;
 
     const pages = {
@@ -93,15 +93,14 @@ const Manager = props => {
     }
 
     return (
-        <div className="container manager">
-            { pages[selectedPage] || null }
+        <div className="container">
+            { pages[selectedPage] }
         </div>
     );
 }
 
 Manager.propTypes = {
     roster: PropTypes.array,
-    editingRoster: PropTypes.object,
     rosters: PropTypes.array,
     modalOpen: PropTypes.bool,
     displayModal: PropTypes.func,
@@ -110,10 +109,8 @@ Manager.propTypes = {
     fetchRosters: PropTypes.func,
     createRoster: PropTypes.func,
     removePlayer: PropTypes.func,
-    handleSubmit: PropTypes.func,
-    selectedPage: PropTypes.string,
-    pristine: PropTypes.bool,
-    submitting: PropTypes.bool
+    editingRoster: PropTypes.object,
+    selectedPage: PropTypes.string
 }
 
 export default Manager
