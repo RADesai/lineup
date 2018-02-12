@@ -1,4 +1,5 @@
 const path = require('path');
+const controller = require('./controllers/controller.js');
 
 const mongoose = require('mongoose');
 const db = 'mongodb://localhost/dev_lineup';
@@ -15,6 +16,17 @@ mongoose.connect(db, {
 
 module.exports = function (app, express) {
     const router = express.Router();
+
+    router.route('/players')
+        .get(controller.fetchPlayers)
+        .post(controller.addPlayer);
+        
+    router.route('/rosters')
+        .get(controller.fetchRosters)
+        .post(controller.createRoster);
+
+    router.route('/players/:id')
+        .delete(controller.removePlayer);
 
     app.use('/api', router);
 

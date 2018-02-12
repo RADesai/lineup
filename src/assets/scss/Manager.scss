@@ -1,0 +1,21 @@
+@import "./Styles";
+.select-page {
+    color: $light-purple;
+    font-size: 16px;
+    font-family: $secondary-font;
+    transition: .3s ease;
+    margin: 50px 0;
+    .select-page-icon {
+        .fa-address-book,
+        .fa-basketball-ball,
+        .fa-users,
+        .fa-th-list {
+            font-size: 50px;
+            color: $blue;
+        }
+    }
+}
+.select-page:hover {
+    cursor: pointer;
+    color: $blue;
+}

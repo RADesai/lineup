@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import actions from '../actions/actions';
+import Navbar from '../components/Navbar'
+import Manager from '../components/Manager'
 import '../assets/scss/App.scss';
 
 class App extends Component {
     render() {
         return (
             <div>
-                Lineup
+                <Navbar />
+                <Manager { ...this.props } />
             </div>
         )
     }
@@ -20,7 +23,10 @@ App.PropTypes = {
 };
 
 function mapStateToProps(state) {
-    console.log("state:", state);
+    const { roster, rosters, selectedPage } = state.rosterReducer;
+    const { modalOpen, editingRoster } = state.modalReducer;
+    const { status } = state.statusReducer;
+    return { roster, rosters, selectedPage, modalOpen, editingRoster, status };
 }
 
 function mapDispatchToProps(dispatch) {

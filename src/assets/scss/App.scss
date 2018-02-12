@@ -1,4 +1,9 @@
 @import "./Styles";
 body {
     height: 100%;
+    font-family: $primary-font;
+    .jumbotron {
+        background-color: transparent;
+        box-shadow: 0 0 2px $light-blue;
+    }
 }
