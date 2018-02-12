@@ -12,21 +12,7 @@ class App extends Component {
         return (
             <div>
                 <Navbar />
-                <Manager
-                    { ...this.props }
-                    // selectPage={ this.props.actions.selectPage }
-                    // addPlayer={ this.props.actions.addPlayer }
-                    // fetchPlayers={ this.props.actions.fetchPlayers }
-                    // removePlayer={ this.props.actions.removePlayer }
-                    // fetchRosters={ this.props.actions.fetchRosters }
-                    // createRoster={ this.props.actions.createRoster }
-                    // displayModal={ this.props.actions.displayModal }
-                    // modalOpen={ this.props.modalOpen }
-                    // roster={ this.props.roster }
-                    // editingRoster={ this.props.editingRoster }
-                    // rosters={ this.props.rosters }
-                    // selectedPage={ this.props.selectedPage }
-                />
+                <Manager { ...this.props } />
             </div>
         )
     }
