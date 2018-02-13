@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import RosterModal from '../components/RosterModal'
 import ReturnButton from './ReturnButton';
-import '../assets/scss/ManageRosters.scss'
+// import '../assets/scss/Lineups.scss'
 
-class ManageRosters extends Component {
+class Lineups extends Component {
     constructor(props) {
         super(props);
     }
@@ -45,10 +45,7 @@ class ManageRosters extends Component {
                                         <i className="fas fa-basketball-ball"></i>
                                     </div>
                                     { roster.name }
-                                    <div className="lineups-icon">
-                                        Set Lineups
-                                        <i className="fas fa-users"></i>
-                                    </div>
+                                    <br />
                                     <small className="text-muted">{ roster._id }</small>
                                 </div>
                             </div>
@@ -61,7 +58,7 @@ class ManageRosters extends Component {
     }
 }
 
-ManageRosters.propTypes = {
+Lineups.propTypes = {
     editingRoster: PropTypes.object,
     rosters: PropTypes.array,
     rosterDeleted: PropTypes.bool,
@@ -69,4 +66,4 @@ ManageRosters.propTypes = {
     selectPage: PropTypes.func
 }
 
-export default ManageRosters
+export default Lineups

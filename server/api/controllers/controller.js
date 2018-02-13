@@ -31,7 +31,8 @@ module.exports = {
         RosterModel.findByIdAndRemove(req.params.id, err => {
             err
             ? res.status(500).send(err)
-            : res.json({message: 'Successfully Deleted!'})
+            : res.json(
+                { id: req.params.id, message: 'Successfully Deleted!' })
         })
     },
     fetchRosters: (req, res) => {

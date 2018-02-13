@@ -5,12 +5,12 @@ const initialState = {
     rosters: []
 }
 
-const addPlayer = (newPlayer, state) => {
-    return [ ...state.roster, newPlayer ]
-}
 const removePlayer = (removedPlayer, state) => {
     return state.roster.filter(player => player.name  !== removedPlayer.name)
 }
+
+const filterOutDeletedRoster = (deletedRosterId, state) =>
+    state.rosters.filter(roster => roster._id !== deletedRosterId)
 
 export default function rosterReducer(state = initialState, action) {
     switch (action.type) {
@@ -22,16 +22,12 @@ export default function rosterReducer(state = initialState, action) {
         case CONSTANTS.ADD_PLAYER:
             return {
                 ...state,
-                roster: addPlayer(action.payload, state)
+                roster: [ ...state.roster, action.payload ]
             }
         case CONSTANTS.REMOVE_PLAYER:
             return {
                 ...state,
                 roster: removePlayer(action.payload, state)
-            }
-        case CONSTANTS.CLOSE_ROSTER_MODAL:
-            return {
-                ...initialState
             }
         case `${CONSTANTS.FETCH_PLAYERS}_${CONSTANTS.FULFILLED}`:
             return {
@@ -45,6 +41,10 @@ export default function rosterReducer(state = initialState, action) {
             }
         // find roster that was deleted and mark it
         case `${CONSTANTS.DELETE_ROSTER}_${CONSTANTS.FULFILLED}`:
+            return {
+                ...state,
+                rosters: filterOutDeletedRoster(action.payload.data.id, state)
+            }
         default:
             return state;
     }

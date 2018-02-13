@@ -2,25 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import '../assets/scss/RosterModal.scss'
 
-const getSuccessfulDeleteModalContent = closeModal =>
-    <div onBlur={ () => closeModal() } className="modal-content">
+const getSuccessfulDeleteModalContent = () =>
+    <div className="modal-content">
         <div className="modal-header">
             <div className="modal-title">
                 <div className="roster-deleted">Roster was successfully deleted!</div>
             </div>
-            <button onClick={ () => closeModal() } type="button" className="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <i className="far fa-times-circle"></i>
             </button>
         </div>
     </div>
 
 const RosterModal = props => {
-    const { roster, deleteRoster, rosterDeleted, modalOpen, closeModal } = props;
+    const { roster, deleteRoster, rosterDeleted } = props;
     return (
-        <div className="modal fade" id="myModal" show={ modalOpen }>
+        <div className="modal fade" id="myModal">
             <div className="modal-dialog" role="document">
             { rosterDeleted
-                ? getSuccessfulDeleteModalContent(closeModal)
+                ? getSuccessfulDeleteModalContent()
                 : <div className="modal-content">
                     <div className="modal-header">
                         <div className="modal-title">{ roster.name }</div>
@@ -64,7 +64,6 @@ const RosterModal = props => {
 
 RosterModal.propTypes = {
     roster: PropTypes.object,
-    modalOpen: PropTypes.bool,
     rosterDeleted: PropTypes.bool,
     deleteRoster: PropTypes.func
 }
