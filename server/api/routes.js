@@ -2,7 +2,7 @@ const path = require('path');
 const controller = require('./controllers/controller.js');
 
 const mongoose = require('mongoose');
-const db = 'mongodb://localhost/dev_lineup';
+const db = require('./mlab_credentials.js')
 
 mongoose.connect(db, {
     useMongoClient: true

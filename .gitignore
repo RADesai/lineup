@@ -3,6 +3,7 @@
 
 # hidden
 /.vscode
+/server/api/mlab_credentials.js
 
 # testing
 /coverage
