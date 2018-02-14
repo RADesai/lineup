@@ -21,6 +21,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
+    "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
@@ -48,7 +49,6 @@
     "webpack-hot-middleware": "^2.20.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
     "babel-plugin-transform-es2015-destructuring": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
