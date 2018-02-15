@@ -2,7 +2,8 @@ const path = require('path');
 const controller = require('./controllers/controller.js');
 
 const mongoose = require('mongoose');
-const db_URI = process.env.NODE_ENV === 'PRODUCTION'
+
+const db_URI = process.env.NODE_ENV === 'production'
     ? `mongodb://${process.env.USER}:${process.env.PASS}@ds051543.mlab.com:51543/heroku_t3t29z55`
     : require('./mlab_credentials.js')
 
