@@ -110,11 +110,7 @@ const Manager = props => {
         )
     }
 
-    return (
-        <div className="container">
-            { pages[selectedPage] }
-        </div>
-    );
+    return pages[selectedPage];
 }
 
 Manager.propTypes = {

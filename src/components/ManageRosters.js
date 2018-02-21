@@ -15,7 +15,7 @@ class ManageRosters extends Component {
 
     render() {
         return (
-            <div className="container manage-rosters">
+            <div className="manage-rosters">
                 <RosterModal
                     roster={ this.props.editingRoster }
                     deleteRoster={ this.props.deleteRoster }
@@ -33,7 +33,7 @@ class ManageRosters extends Component {
                         this.props.rosters.map(roster => 
                             <div
                                 key={ roster._id }
-                                className="col-xs-12 col-md-4 col-lg-3"
+                                className="col-sm-12 col-md-4 col-lg-3"
                             >
                                 <div
                                     className="roster-icon text-center"

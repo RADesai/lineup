@@ -16,7 +16,7 @@ const CreateRoster = props => {
     } = props;
 
     return (
-        <div className="container create-roster">
+        <div className="create-roster">
             <ReturnButton selectPage={ selectPage } />
             <div className="row text-center">
                 <div className="col-sm-12 page-title">
